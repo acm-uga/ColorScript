@@ -79,14 +79,14 @@ function rainbowColor() {
     if [[ $OFFLIM -ne 0 ]]; then
         let TEMP=$ELEM-1
         let ELEMWRAP=$TEMP%${#rainbowArray[@]}
-        arr=(${rainbowArray[$ELEMWRAP]}${1:0:$OFFLIM})
+        arr=("${rainbowArray[$ELEMWRAP]}${1:0:$OFFLIM}")
     fi #if offset leaves out first chars, get them in first
     INDEX=0 #index for while loop
     while [ $INDEX -lt $LIM ]; do
         let POINT=$INDEX*$STEPS+$OFFLIM #get index of string
         let ELEMWRAP=$ELEM+$INDEX #get the wrap arounf of the color
         let ELEMWRAP=$ELEMWRAP%${#rainbowArray[@]}
-        arr=(${arr[@]}${rainbowArray[$ELEMWRAP]}${1:$POINT:$STEPS})
+        arr=("${arr[@]}${rainbowArray[$ELEMWRAP]}${1:$POINT:$STEPS}")
         let INDEX=$INDEX+1 # push to array and increment index
     done #while there are still chars left
     arr=(${arr[@]}${NC})
