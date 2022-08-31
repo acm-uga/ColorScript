@@ -86,6 +86,9 @@ function rainbowColor() {
         let POINT=$INDEX*$STEPS+$OFFLIM #get index of string
         let ELEMWRAP=$ELEM+$INDEX #get the wrap arounf of the color
         let ELEMWRAP=$ELEMWRAP%${#rainbowArray[@]}
+        if [[ $ELEMWRAP -lt 0 ]]; then
+            let ELEMWRAP=${#rainbowArray[@]}+$ELEMWRAP
+        fi
         arr=("${arr[@]}${rainbowArray[$ELEMWRAP]}${1:$POINT:$STEPS}")
         let INDEX=$INDEX+1 # push to array and increment index
     done #while there are still chars left
