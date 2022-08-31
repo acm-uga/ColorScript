@@ -1,7 +1,15 @@
 # Rock Paper Scissors Shoot game
 
-## Core Concepts
+## Activty Outline
 
+In this activity your challenge is to make a rock-paper-scissors game from scratch.\
+1. Welcome the user to the game
+2. Prompt the user to pick rock, paper, or scissors
+3. Generate computer's choice
+4. Compare user and computer choice
+5. Print out who wins
+
+## Core Concepts
 
 ### How to declare and store a variable
 ```
@@ -46,12 +54,12 @@ Then we add + 1 to provide a lower bound. So the range of numbers this will gene
 computerChoice=$(($RANDOM % 3 + 1))
 ```
 
+
 ### Psuedocode
 
 Print out a few lines saying hello and what the game is
 Print out a selection box
-Take in user input and store it in variable
+Take in user input (I use numbers for this makes it easier) and store it in variable
 Generate the computers random choice
-Check which choice it is
-Check which choice computer made
-Compare choices and tell user who won
+Compare user and computer choice and determine who won
+Print out in terminal who won

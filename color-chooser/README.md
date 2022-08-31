@@ -1,4 +1,10 @@
-# ColorScript
+# Reading and understanding a bash script
+
+## Activity Outline
+In this activity most of the code is already written for you but it is up to you to complete the job.
+You are given a script that is able to print out text in different colors. 
+Currently this script only has 3 choices of color available.\
+It is up to you to read through the code and deduce how the extra colors can be added.
 
 ## Core Concepts
 

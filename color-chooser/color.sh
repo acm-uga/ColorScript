@@ -1,3 +1,6 @@
+#!/bin/bash
+# For readability we have defined color codes at the top of the script which we use later
+# More Info on colors: https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4-bit
 RED='\033[38;2;255;0;0m'
 RED_TO_ORANGE_1='\033[38;2;255;77;0m'
 RED_TO_ORANGE_2='\033[38;2;255;112;0m'
@@ -22,6 +25,9 @@ VIOLET_TO_RED_2='\033[38;2;255;0;89m'
 NC='\033[0m'
 
 # The list of colors available
+# Since bash is weird and data structures are a pain for it we are storing the values of our colors like this
+# colorName::<the color code value for the color>
+# DO NOT PUT COMMAS IN HERE
 colors=(
     "red::${RED}"
     "blue::${BLUE}"
@@ -30,7 +36,7 @@ colors=(
 # The current selected color
 selectedColor="${NC}"
 
-# Sets the selectedColor variable to the correct color code
+# Sets the selectedColor variable to the correct color code (IGNORE THIS IS NOT WHAT YOU WANT TO LOOK FOR)
 get_color() {
     for i in ${colors[@]}; do
         if [ "${1}" = "${i%%::*}" ]; then 
