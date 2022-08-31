@@ -10,35 +10,29 @@ if [ "${selection}" = "1" ]; then
         echo "You chose rock."
         # Nested if statements to determine who won
         if [ "${computerChoice}" = "2" ]; then
-            echo "The computer chose ... scissors.\n"
-            echo "You win!"
+            echo -e "The computer chose ... scissors.\nYou win!"
         elif [ "${computerChoice}" = "3" ]; then
-            echo "The computer chose ... paper."
-            echo "You lose!"
+            echo -e "The computer chose ... paper.\nYou lose!"
         else 
-            echo "The computer chose ... rock. \nYou tied!"
+            echo -e "The computer chose ... rock. \nYou tied!"
         fi
     elif [ "${selection}" = "2" ]; then
         echo "You chose scissors."
         if [ "${computerChoice}" = "2" ]; then
-            echo "The computer chose ... scissors.\n"
-            echo "You tied!"
+            echo -e "The computer chose ... scissors.\nYou tied!"
         elif [ "${computerChoice}" = "3" ]; then
-            echo "The computer chose ... paper."
-            echo "You win!"
+            echo -e "The computer chose ... paper.\nYou win!"
         else 
-            echo "The computer chose ... scissors. \nYou tied!"
+            echo -e "The computer chose ... scissors. \nYou tied!"
         fi
     elif [ "${selection}" = "3" ]; then
         echo "You chose paper."
         if [ "${computerChoice}" = "2" ]; then
-            echo "The computer chose ... scissors.\n"
-            echo "You lose!"
+            echo -e "The computer chose ... scissors.\nYou lose!"
         elif [ "${computerChoice}" = "3" ]; then
-            echo "The computer chose ... paper."
-            echo "You tied!"
+            echo -e "The computer chose ... paper.\nYou tied!"
         else 
-            echo "The computer chose ... rock. \nYou won!"
+            echo -e "The computer chose ... rock. \nYou won!"
         fi
     else 
         echo "Invalid Choice."
