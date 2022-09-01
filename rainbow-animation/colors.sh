@@ -102,7 +102,26 @@ function rainbowColor() {
 #@param $1: string to make animated
 #returns: strings
 function rainbowAnimate() {
-    # You do this
+    STR="alallalalalalalalalalalalalallalalalalala"
+    STEPS=2
+    RANGE=50
+    if [[ $# -eq 0 || $# -gt 3 ]]; then
+        return 1
+    elif [[ $# -eq 1 ]]; then
+        STR=$1
+    elif [[ $# -eq 2 ]]; then
+        STR=$1
+        STEPS=$2
+    else
+        STR=$1
+        STEPS=$2
+        RANGE=$3
+    fi
+    for i in $(eval echo "{0..$RANGE}"); do
+        echo -en "$(rainbowColor ${STR} ${STEPS} ${i})"
+        echo -en "\r"
+        #sleep 0.05
+    done
 }
 
 #From stackoverflow
