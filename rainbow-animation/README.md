@@ -1,6 +1,14 @@
 # ColorScript
 
 ## Core Concepts
+
+### Activity Outline
+In this activity, you are being asked to animate the rainbow text. The rainbow function is already given to you with an offset variable, but you will have to implement the rainbowAnimate function.
+- What you need for animation:
+    - One method is to print out the text color, then print it out differently after some time.
+    - You may not need the `sleep` function, but it takes floating point numbers (decimals: `0.5`) and it interprets it as seconds.
+        - Ex: `sleep 0.5` is to have the script wait for half a second.
+
 ### How to declare and store a variable
 ```
 randomString="Hello World!"
@@ -43,6 +51,16 @@ if [ "${selection}" = "1" ]; then
         commands
     done
   ```
+
+### Echo
+echo is a command that takes in a string as an argument and then prints it back out to you
+``` echo "The string you want to print out ```
+This code will execute and return 
+```"The string you want to print out```
+This is useful for printing out things to the user in a bash script.
+Also, you can use options to alter echo. Two you will need is:
+- `-e`: interpret escape codes
+- `-n`: do not append new line by default
 
 ### String Manipulation
 The only thing needed for this is getting the length of the string `${#varName}` and string slicing. The syntax is `${varName:index:length}` where the index is the index (from 0 to `${#varName}` - 1) and the length is the amount of characters you want sliced from it. This does nothing to the original string
