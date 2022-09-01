@@ -1,5 +1,5 @@
 #!/bin/bash
-# For readability we have defined color codes at the top of the script which we use later
+# This chunk of code at the top is to define what each of the colors are, as stored by your system.
 # More Info on colors: https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4-bit
 RED='\033[38;2;255;0;0m'
 RED_TO_ORANGE_1='\033[38;2;255;77;0m'
@@ -40,9 +40,9 @@ selectedColor="${NC}"
 get_color() {
     for i in ${colors[@]}; do
         if [ "${1}" = "${i%%::*}" ]; then 
-            selectedColor="${i##*::}"
-        fi
-    done
+            selectedColor="${i##*::}" # make selected color the desired color
+        fi # if input matches color name (red, taking out chars past ::)
+    done # for every element of colors array
 }
 # Prompts the user for file or text input
 printf "${BLUE}Welcome ${VIOLET}to ${GREEN}the ${YELLOW}Terminal ${ORANGE}Text${RED} Colorer ${NC}\n"
@@ -51,17 +51,17 @@ printf "Print file or input text in color?\n\t 1. File \n\t 2. Input Text \nPlea
 read -r selection
 # If statement to switch between file or input text mode
 if [ "$selection" = "1" ] ; then
-    echo "Not ready yet ;)"
+    echo "Not ready yet ;)" # prints string to terminal
 elif [ "$selection" = "2" ] ; then
     printf "\n\nAvailable colors: \n"
     for i in ${colors[@]}; do
-        printf "${i##*::}${i%::*} - looks like this ${NC}\n"
-    done
+        printf "${i##*::}${i%::*} - looks like this ${NC}\n" # gives example of color
+    done # for every element in colors array
     printf "Which color would you like to select:\t"
-    read -r colorInput
-    get_color "${colorInput}"
+    read -r colorInput # gets color from user
+    get_color "${colorInput}" # parses user color
     printf "Enter ${YELLOW}below${NC} the text that you want to be colored ${selectedColor}${colorInput}${NC}:\n"
-    read inputText
-    echo "Your Colored Text: "
-    printf "${selectedColor}${inputText}\n"
+    read inputText # gets colored text
+    echo "Your Colored Text: " # prints the text
+    printf "${selectedColor}${inputText}\n" # prints colored text
 fi
