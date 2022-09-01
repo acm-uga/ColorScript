@@ -1,3 +1,5 @@
+#!/bin/bash
+
 printf "\n\nWelcome to Rock Paper Scissors Shoot!\n"
 
 printf "Available options:\n 1. Rock \n 2. Scissors \n 3. Paper\n Your Choice: "

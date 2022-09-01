@@ -6,6 +6,11 @@ In order to do this you will need to add to your PATH environment variable where
 
 ## Concepts
 
+### Make the .sh file targetable
+In order to target the new .sh command you created you need to add it to your path and also change the file extension.
+First create a new directory for your command to go into.
+Then move your command script in there and change the name to remove the .sh part
+
 ### Create script that does something
 For this tutorial you should create a script that does something and can execute\
 so you can test if you were able to add it to your path\
